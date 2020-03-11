@@ -2,6 +2,7 @@ from flask import Blueprint
 from flask import redirect
 from flask import request
 from flask import render_template
+from config import settings
 
 
 add_blueprint = Blueprint("ss_add",__name__,template_folder="templates")
@@ -16,8 +17,8 @@ def add():
         user = request.form["user"]
         pwd = request.form["pwd"]
 
-    with open('./data/chap-secrets', encoding='utf-8') as f1, \
-            open('./data/chap-secrets', encoding='utf-8', mode='a') as f2:
+    with open(settings.filedata_path, encoding='utf-8') as f1, \
+            open(settings.filedata_path, encoding='utf-8', mode='a') as f2:
         try:
             for line in f1:
                 print(line)
