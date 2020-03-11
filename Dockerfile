@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir \
 WORKDIR /data
 COPY . /data
 
-CMD ["python manager.py /dev/null 2>&1" ]
+CMD ["python", "manager.py", "/dev/null", "2>&1"]
