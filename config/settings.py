@@ -1,8 +1,11 @@
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 项目根目录
-filedata_dir = os.path.join(BASE_DIR,"data")  #读取您的文件目录
+#debug
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 项目根目录
+# filedata_dir = os.path.join(BASE_DIR,"data")  #读取您的文件目录
 
+# production
+filedata_dir = '/config'
 
 filedata_path=os.path.join(filedata_dir,"chap-secrets")  # 配置文件
 

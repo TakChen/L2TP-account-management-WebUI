@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  l2tp:
+    image: hwdsl2/ipsec-vpn-server
+    ports: 
+      - 500:500/udp
+      - 4500:4500/udp
+    restart: always
+    privileged: true
+    volumes: 
+      - ./data/chap-secrets:/etc/ppp/chap-secrets:ro
+      - ./vpn.env:/opt/src/vpn.env:ro
+  manage-ui:
+    image: registry-intl.cn-hongkong.aliyuncs.com/aqumon-test/l2tp-account-management-webui:0.1
+    ports: 
+      - 8000:8000
+    volumes: 
+      - ./data:/config:rw
+    restart: always
